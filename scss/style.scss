@@ -1,0 +1,516 @@
+$other: #f1f1f1;
+$flexible: flex;
+$rodape: url('../images/rodape.jpg');
+$font:'Roboto', sans-serif;
+$small-width: 600px;
+$tablet-width: 900px;
+$color: rgb(40, 53, 121);
+$clear: none;
+$color-menu: rgb(119, 119, 119);
+$mix: rgb(224, 34, 118);
+$montserrat: 'Montserrat', sans-serif;
+
+@mixin hover($transition, $background){
+    transition: $transition;
+    background: $background;
+}
+@mixin small{
+    @media(max-width:#{$small-width}){
+        @content;
+    }
+}
+@mixin tablet{
+    @media(max-width:#{$tablet-width}){
+        @content;
+    }
+}
+@mixin top($top){
+ top: $top;
+}
+@mixin size($width, $height){
+    width:$width;
+    height:$height;
+}
+%center{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header{
+    @include small{
+        display: none;
+    }
+    @include tablet{
+        display: none;
+        flex-direction: column;
+      }
+}.search{
+    cursor: pointer;
+}
+#action-small{
+    @extend %center;
+    flex-direction: column;
+    display: none;
+    @include tablet{
+       display: block;
+       ul{
+           display: $flexible;
+            align-items: center;
+            flex-direction: column;
+            margin: 30px;
+           li{
+            margin-bottom: 20px;
+            list-style: none;
+           }
+           a{
+             text-decoration: none;
+             color:$color-menu;
+           }
+       }
+      }
+}
+.search input{
+    margin-left: 50px;
+}
+.ative{
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#sup{
+  display: $flexible;
+  @include size(100%, 5%);
+  @include tablet{
+      flex-direction: column;
+      display: none;
+      
+  }
+}
+.store{
+  @extend %center;
+  flex: 1;
+  @include tablet{
+      flex-direction: column;
+  }
+  a{
+    position: relative;
+    left: -112;
+    @include tablet{
+       left: 0px; 
+    }
+    font-size: 13px;
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: $clear;
+    color: $color-menu;
+    &:hover{
+        transition: 1s;
+        color: $mix;
+    }
+  }
+}
+.space{
+    flex: 1; 
+    @include tablet{
+        display: none;
+    }
+}
+.logo{
+    @include tablet{
+        flex-direction: column;
+        z-index: 999;
+    }
+    li{
+        @include tablet{
+            margin: 30px 0px;
+        }
+        @extend %center;
+        margin: 0px 20px;
+        font-family: 'Source Code Pro', monospace;
+        a{
+            text-decoration: $clear;
+            color: $color-menu;
+            letter-spacing: 2px;
+            &:hover{
+                transition: 1s;
+                color: rgb(224, 34, 118);
+            }
+        }
+    }
+}
+.sg{
+    @extend %center;
+    @include tablet{
+        flex-direction: column;
+       }
+    li{
+        a{
+            font-size: 13px;
+            text-decoration: $clear;
+            color: $color-menu;
+            margin: 0px 15px; 
+            font-family: 'Source Code Pro', monospace;
+            &:hover{
+                transition: 1s;
+                color: $mix;
+            }
+        }
+    }
+}
+.ico{
+    width: 10px;
+    margin-right: 5px;
+    @include tablet{
+        margin-left: 10px;
+    }
+}
+.sigin{
+    @extend %center;
+    flex: 1;
+    @include tablet{
+     flex-direction: column;
+    }
+    ul{
+
+    }
+    li{
+       display: inline-block; 
+    }
+}
+.menu{
+    margin: 20px;
+    width: 100%;
+    @extend %center;
+    background-color: rgb(255, 255, 255);
+    @include tablet{
+        flex-direction: column;
+        z-index: 999;
+        margin:20px 0px 40px 0px;
+    }
+}
+nav{
+    ul{
+        display: $flexible;
+        li{
+          display: inline-block;
+          margin: 0px 10px; 
+        }
+    }
+}
+#vitrine img{
+    width: 100%;
+}
+#container{
+h3{
+    @extend %center;
+    font-family: $montserrat;
+    letter-spacing: 3px;
+}
+p{
+    @extend %center;
+}
+}
+.vitrine{
+    ul{
+        display: $flexible;
+        @include small{
+        flex-direction: column;
+        align-items: center;
+        }
+        li{
+           display: $flexible;
+           display: inline-block;
+           margin: 0px 50px; 
+           img{
+               width: 100%;
+               @include small{
+                width: 90%;
+            }
+           }
+        }
+    }
+}
+.vitrine ul li.flexible{
+    display: $flexible !important;
+    align-items: center;
+}
+#model{
+    display: $flexible;
+    @include small{
+        flex-direction: column;
+    }
+}
+#one{
+    @extend %center;
+}
+.more{
+    @extend %center;
+    display: $flexible;
+    flex-direction: column;
+    width: 50%;
+    .btn{
+
+        button{
+            font-size: 20px;
+            padding: 8px;
+            width: 200px;
+            border: 2px solid white;
+            color: white;
+            background-color: rgb(102, 196, 182);
+        }
+    }
+}
+  .md{
+    @include small{
+        display: $flexible;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+  }
+    .img{
+        width: 100%;
+        @include small{
+            width: 200px;
+        }
+}
+.search{
+    @include small{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.search input{
+    border: 2px solid white;
+    width: 100px;
+    @include tablet{
+        margin-bottom: 30px;
+    }
+}
+h3{
+    font-family: $font;
+    letter-spacing: 3px;
+    color: $color-menu;
+}
+h4{
+    font-family: $font;
+    letter-spacing: 3px;
+    font-size: 9px; 
+}
+p{
+    font-family: 'Raleway', sans-serif;
+}
+.big{
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+#null{
+    width: 100%;
+    height: 120px;
+}
+#model-2{
+    display: $flexible;
+    flex-direction: row-reverse;
+    @include small{
+        flex-direction: column;
+    }
+}
+#model-3{
+    display: $flexible;
+    @include small{
+        flex-direction: column;
+    }
+}
+#model-4{
+    display: $flexible;
+    flex-direction: row-reverse;
+    @include small{
+        flex-direction: column;
+    }
+}
+#model-5{
+    display: $flexible;
+    @include small{
+        flex-direction: column;
+    }
+}
+#rodape{
+    img{
+        width: 100%;
+    }
+    width: 100%;
+    background-size: cover;
+}
+#social-media{
+    display: $flexible;
+    padding: 0px 20px;
+    margin-bottom: 50px;
+    h3{
+        margin: 10px;
+        letter-spacing: 3px;
+        color:rgb(82, 82, 82);
+        font-size: 12px;
+    }
+    ul{
+        margin: 20px 30px;
+        li{
+            margin: 10px 0px;
+            letter-spacing: 2px;
+            color: $color-menu;
+            list-style: none; 
+        }
+    }
+    @include small{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.pgf{
+    color:$color-menu;
+}
+.at{
+ flex: 2;
+ align-items: center;
+ flex-direction: column;
+}
+.info{
+ flex: 2;
+ align-items: center;
+ flex-direction: column;
+}
+.contact{
+ flex: 2;
+ align-items: center;
+ flex-direction: column;
+}
+.new{
+ flex: 2;
+ align-items: center;
+ flex-direction: column;
+}
+hr{
+    border: 1px solid #efe9e9
+}
+input[type="name"],input[type="email"]{
+    background-color: #eeebeb94;
+    border: 1px solid white;
+    height: 37px;
+    width: 220px;
+    padding-left: 20px;
+    @include tablet{
+        height: 50px;
+        width: 300px;
+        font-size: 20px;
+        padding-left: 30px;
+    }
+}
+input[type="email"]{
+    width: 150px;
+    @include tablet{
+        height: 50px;
+        width: 210px;
+    }
+}
+input[type="submit"]{
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid white;
+    color: white;
+    height: 37px;
+    width: 60px;
+    background-color: $color;
+    font-family: $font;
+    @include tablet{
+        height: 50px;
+        width: 80px;
+        font-size: 20px;
+    }
+}
+input[type="submit"]:hover{
+    @include hover(1s, rgb(224, 34, 118));
+}
+.bottom{
+    @extend %center;
+    width: 100%;
+    background-color: #283579;
+    @include small{
+        flex-direction: column;
+    }
+}
+.ft{
+    margin: 15px 60px;
+    @extend %center;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: white;
+}
+.small{
+    width: 100%;
+    height: 100px;
+    display: none;
+    @include tablet{
+        display: $flexible;
+        display: block;
+     }
+    @include small{
+       display: block;
+       display: $flexible;
+    }
+}
+.logo-1{
+    width: 170px;
+    margin: 10px;
+    @include tablet{
+        margin-top: 15px;
+        flex: 4;
+        width: 120px;
+        z-index: 999;
+    }
+}
+.hamburguer{
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    z-index: 999;
+}
+.logo .sm-ocult{
+    @include tablet{
+        display: none;
+    }
+}
+.btn button:hover{
+    @include hover(2s, rgb(224, 34, 118))
+}
+.more .btn .color{
+    background-color: #283579;
+    &:hover{
+        @include hover(2s, rgb(224, 34, 118))
+    }
+}
+.reserved{
+    @extend %center;
+    height: 80px;
+    img{
+        width: auto;
+        margin: 0 50px;
+    }
+    @include tablet{
+        display: none;
+    }
+    
+}
+.social{
+    img{
+        margin: 20px;
+    }
+}

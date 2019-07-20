@@ -2,8 +2,9 @@ $other: #f1f1f1;
 $flexible: flex;
 $rodape: url('../images/rodape.jpg');
 $font:'Roboto', sans-serif;
-$small-width: 600px;
-$tablet-width: 900px;
+$small-width: 765px;
+$tablet-width: 950px;
+$tablet-small-width: 850px;
 $color: rgb(40, 53, 121);
 $clear: none;
 $color-menu: rgb(119, 119, 119);
@@ -16,6 +17,11 @@ $montserrat: 'Montserrat', sans-serif;
 }
 @mixin small{
     @media(max-width:#{$small-width}){
+        @content;
+    }
+}
+@mixin tablet-small{
+    @media(max-width:#{$tablet-small-width}){
         @content;
     }
 }
@@ -352,6 +358,7 @@ p{
 }
 #social-media{
     display: $flexible;
+    flex-direction: wrap-reverse;
     padding: 0px 20px;
     margin-bottom: 50px;
     h3{
@@ -397,6 +404,7 @@ p{
  flex: 2;
  align-items: center;
  flex-direction: column;
+ 
 }
 hr{
     border: 1px solid #efe9e9
@@ -413,6 +421,15 @@ input[type="name"],input[type="email"]{
         font-size: 20px;
         padding-left: 30px;
     }
+    @include tablet-small{
+        height: 50px;
+        width: 170px;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+    @include small{
+        width: 265px;
+    }
 }
 input[type="email"]{
     width: 150px;
@@ -420,6 +437,14 @@ input[type="email"]{
         height: 50px;
         width: 210px;
     }
+    @include tablet-small{
+        height: 50px;
+        width: 100px;
+    }
+    @include small{
+        width: 200px;
+    }
+    
 }
 input[type="submit"]{
     font-size: 15px;
@@ -434,6 +459,11 @@ input[type="submit"]{
         height: 50px;
         width: 80px;
         font-size: 20px;
+    }
+    @include tablet-small{
+        height: 50px;
+        width: 60px;
+        font-size: 16px;
     }
 }
 input[type="submit"]:hover{

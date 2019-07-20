@@ -640,7 +640,7 @@ input[type="name"], input[type="email"] {
 
 @media (max-width: 765px) {
   input[type="name"], input[type="email"] {
-    width: 265px;
+    width: 262px;
   }
 }
 
@@ -664,7 +664,7 @@ input[type="email"] {
 
 @media (max-width: 765px) {
   input[type="email"] {
-    width: 200px;
+    width: 195px;
   }
 }
 

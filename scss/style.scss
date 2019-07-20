@@ -222,6 +222,9 @@ h3{
 }
 p{
     @extend %center;
+    @include small{
+        padding: 10px;
+    }
 }
 }
 .vitrine{
@@ -402,9 +405,15 @@ p{
 }
 .new{
  flex: 2;
+ display: $flexible;
  align-items: center;
  flex-direction: column;
- 
+}
+.new p, h3{
+    @include small{
+        font-size: 12px;
+        padding: 10px !important;
+    }
 }
 hr{
     border: 1px solid #efe9e9

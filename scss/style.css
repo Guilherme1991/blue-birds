@@ -276,6 +276,12 @@ nav ul li {
   letter-spacing: 3px;
 }
 
+@media (max-width: 765px) {
+  #container p {
+    padding: 10px;
+  }
+}
+
 .vitrine ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -599,6 +605,9 @@ p {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -606,6 +615,13 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 765px) {
+  .new p, h3 {
+    font-size: 12px;
+    padding: 10px !important;
+  }
 }
 
 hr {
